@@ -51,11 +51,11 @@ def save_file():
     else:
         save_as_file()
 def save_as_file():
-    text_file = filedialog.asksaveasfilename(defaultextension=".*", initialdir="/Users/atharvazaveri/Desktop/python/projects/pythonProject", titel="Save File", filetypes=(("All Files"), ("*.*")))
+    text_file = filedialog.asksaveasfilename(defaultextension=".*", initialdir='''Enter your directory''', titel="Save File", filetypes=(("All Files"), ("*.*")))
     if text_file:
         name = text_file
         status_bar.config(text=f'Saved: {name}          ')
-        name = name.replace("/Users/atharvazaveri/Desktop/python/projects/pythonProject","")
+        name = name.replace('''Enter your directory''',"")
         root.title(f'{name}')
 
         text_file = open(text_file, 'w')
