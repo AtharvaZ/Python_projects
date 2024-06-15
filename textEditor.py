@@ -24,7 +24,7 @@ def new_file():
 def open_file():
     my_text.delete("1.0", END)\
 
-    file = filedialog.askopenfilename(initialdir = "/Users/atharvazaveri/Desktop/python/projects/pythonProject", title="Open File", filetypes=(("Text Files","*.txt"), ("PDF Files", "*.pdf"), ("All Files","*.*")))
+    file = filedialog.askopenfilename(initialdir = '''Enter your directory''', title="Open File", filetypes=(("Text Files","*.txt"), ("PDF Files", "*.pdf"), ("All Files","*.*")))
 
     if file:
         global open_status_name
@@ -32,7 +32,7 @@ def open_file():
 
     name = file
     status_bar.config(text=name)
-    name = name.replace("/Users/atharvazaveri/Desktop/python/projects/pythonProject","")
+    name = name.replace('''Enter your directory''',"")
     root.title(f'{name}')
 
     file = open(file, 'r')
